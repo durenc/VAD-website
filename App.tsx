@@ -22,7 +22,7 @@ const VAD_PRODUCT: Product = {
   tagline: 'GET BIG, GET STRONG, GET VEINY',
   price: 49.99,
   description: 'Unleash absolute anarchy in your bloodstream. This isnt just a preworkout; its a vascular transformation. Formulated with clinical doses of L-Citrulline, Betaine Nitrate, and Glycerol to force-feed your muscles and create skin-splitting pumps that defy logic.',
-  flavors: ['Consensual Grape', 'Juicy Jiggle Juice'],
+  flavors: ['Veiny Surge Strawberry', 'Ultimate Pump Punch'],
   image: 'https://lh3.googleusercontent.com/gg-dl/AOI_d_8BQXrYoYHKNqsFv_h3qwy8L39uiv5-b2qEBSObOUg-1e4f5eWQQR6vqLPB9-djP1m3z4vSirMEVlnGwBtrcWIp9x-tlkNo-N3h5caTQCMyU-wmIHxD9jKbtgT6Z_zQqxuUdfud3QoMh-z8EW5EKpIE_fcA6HyiLUVYptpponIip-ezBQ=s1024-rj'
 };
 
