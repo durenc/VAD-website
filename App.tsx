@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { 
   ShoppingBag, 
   Instagram, 
-  Twitter, 
   Facebook,
   Skull,
   Flame,
@@ -13,8 +12,7 @@ import {
   ZapOff,
   Dumbbell,
   Droplets,
-  CreditCard,
-  ExternalLink
+  CreditCard
 } from 'lucide-react';
 import { Flavor, Product } from './types.ts';
 
@@ -362,23 +360,16 @@ const App: React.FC = () => {
                 {VAD_PRODUCT.tagline}
               </h4>
               <div className="flex gap-6 md:gap-10">
-                 {[Instagram, Twitter, Facebook].map((Icon, idx) => (
-                   <a key={idx} href="#" className="w-14 h-14 md:w-20 md:h-20 border-2 border-white/10 flex items-center justify-center text-white hover:bg-blood-red hover:text-white transition-all shadow-[6px_6px_0px_#fff] md:shadow-[10px_10px_0px_#fff] active:scale-95" aria-label={`Social Link ${idx}`}>
-                     <Icon className="w-6 h-6 md:w-9 md:h-9" />
-                   </a>
-                 ))}
+                 <a href="https://www.instagram.com/veinyahdihsupps" target="_blank" rel="noopener noreferrer" className="w-14 h-14 md:w-20 md:h-20 border-2 border-white/10 flex items-center justify-center text-white hover:bg-blood-red hover:text-white transition-all shadow-[6px_6px_0px_#fff] md:shadow-[10px_10px_0px_#fff] active:scale-95">
+                   <Instagram className="w-6 h-6 md:w-9 md:h-9" />
+                 </a>
+                 <a href="https://www.facebook.com/VeinyAhDihSupps" target="_blank" rel="noopener noreferrer" className="w-14 h-14 md:w-20 md:h-20 border-2 border-white/10 flex items-center justify-center text-white hover:bg-blood-red hover:text-white transition-all shadow-[6px_6px_0px_#fff] md:shadow-[10px_10px_0px_#fff] active:scale-95">
+                   <Facebook className="w-6 h-6 md:w-9 md:h-9" />
+                 </a>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-20 lg:w-1/2 w-full">
-               <div className="space-y-6 md:space-y-12">
-                  <h5 className="text-[12px] md:text-[14px] font-black uppercase tracking-[0.4em] md:tracking-[0.6em] text-white">THE LAB</h5>
-                  <ul className="space-y-4 md:space-y-8 text-[11px] md:text-[13px] font-black uppercase tracking-[0.2em] md:tracking-[0.4em] text-slate-500 italic">
-                    <li className="hover:text-blood-red cursor-pointer transition-colors flex items-center gap-3 md:gap-4"><ArrowRight className="w-[14px] h-[14px] md:w-4 md:h-4" /> VAD FORMULA</li>
-                    <li className="hover:text-blood-red cursor-pointer transition-colors flex items-center gap-3 md:gap-4"><ArrowRight className="w-[14px] h-[14px] md:w-4 md:h-4" /> TRENCH GEAR</li>
-                    <li className="hover:text-blood-red cursor-pointer transition-colors flex items-center gap-3 md:gap-4"><ArrowRight className="w-[14px] h-[14px] md:w-4 md:h-4" /> FREAK TRAINING</li>
-                  </ul>
-               </div>
+            <div className="lg:w-1/2 w-full">
                <div className="space-y-6 md:space-y-12">
                   <h5 className="text-[12px] md:text-[14px] font-black uppercase tracking-[0.4em] md:tracking-[0.6em] text-white">NEWSLETTER</h5>
                   <div className="relative group w-full">
