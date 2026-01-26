@@ -23,7 +23,7 @@ const VAD_PRODUCT: Product = {
   price: 49.99,
   description: 'Unleash absolute anarchy in your bloodstream. This isnt just a preworkout; its a vascular transformation. Formulated with clinical doses of L-Citrulline, Betaine Nitrate, and Glycerol to force-feed your muscles and create skin-splitting pumps that defy logic.',
   flavors: ['Consensual Grape', 'Juicy Jiggle Juice'],
-  image: 'url(https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/608700837_868241375797604_2790770691374060399_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=lQ9Cqs0_HjAQ7kNvwEbg4hO&_nc_oc=Adk0zmiNFyO8sx5vOO3j9_rVw062D8MNZO_S7Wv3P2VKvz5z-TCFyx1jtZp0ghkX5WAR7Tg_0E6UChUzkrS1lZRZ&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&_nc_gid=KOuwNGCIIxb5MzXcqhCVQw&oh=00_Afqp2dKV98LBd0-aS3U1gD6w7Ch39N96JGt_Qxk-X1pHOw&oe=697CD236)'
+  image: '/images/Product.png'
 };
 
 const SupplementFacts: React.FC = () => (
@@ -107,13 +107,13 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-blood-red selection:text-white font-['Inter'] overflow-x-hidden">
-      <div className="fixed inset-0 z-[-1]" style={{ backgroundImage: `url('https://media.istockphoto.com/id/1468889693/photo/vascular-system-veins.jpg?s=612x612&w=0&k=20&c=GyH4LznLxdJDeh6nsiITiKKtKqrd_U3FnXpVe65XBDE=')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', filter: 'brightness(0.3)' }}></div>
+      <div className="fixed inset-0 z-[-1]" style={{ backgroundImage: `url('/images/processed-0618CD9F-A8FD-4A8C-A15C-07CFD9254F98.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', filter: 'brightness(0.6)' }}></div>
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-[70] transition-all duration-300 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-blood-red/40 py-2' : 'bg-transparent py-4 md:py-6'}`}>
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
           <div className="flex items-center gap-3 md:gap-4 group cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             <div className="relative">
-              <img src="https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/608700837_868241375797604_2790770691374060399_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=lQ9Cqs0_HjAQ7kNvwEbg4hO&_nc_oc=Adk0zmiNFyO8sx5vOO3j9_rVw062D8MNZO_S7Wv3P2VKvz5z-TCFyx1jtZp0ghkX5WAR7Tg_0E6UChUzkrS1lZRZ&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&_nc_gid=KOuwNGCIIxb5MzXcqhCVQw&oh=00_Afqp2dKV98LBd0-aS3U1gD6w7Ch39N96JGt_Qxk-X1pHOw&oe=697CD236" alt="V.A.D Logo" className="w-10 h-10 md:w-12 md:h-12 transition-all duration-300 shadow-[3px_3px_0px_#fff] md:shadow-[4px_4px_0px_#fff]" />
+              <img src="/images/processed-0618CD9F-A8FD-4A8C-A15C-07CFD9254F98.jpeg" alt="V.A.D Logo" className="w-10 h-10 md:w-12 md:h-12 transition-all duration-300 shadow-[3px_3px_0px_#fff] md:shadow-[4px_4px_0px_#fff]" />
             </div>
             <div className="flex flex-col -space-y-1">
               <span className="font-black text-lg md:text-2xl tracking-tighter uppercase italic text-white leading-none">Veiny Ah Dih Supplements</span>
@@ -147,7 +147,7 @@ const App: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
           <img 
-            src="https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/608700837_868241375797604_2790770691374060399_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=lQ9Cqs0_HjAQ7kNvwEbg4hO&_nc_oc=Adk0zmiNFyO8sx5vOO3j9_rVw062D8MNZO_S7Wv3P2VKvz5z-TCFyx1jtZp0ghkX5WAR7Tg_0E6UChUzkrS1lZRZ&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&_nc_gid=KOuwNGCIIxb5MzXcqhCVQw&oh=00_Afqp2dKV98LBd0-aS3U1gD6w7Ch39N96JGt_Qxk-X1pHOw&oe=697CD236" 
+            src="/images/processed-0618CD9F-A8FD-4A8C-A15C-07CFD9254F98.jpeg" 
             alt="Intense Gym" 
             className="w-full h-full object-cover grayscale brightness-[0.1] contrast-150 scale-105"
           />
@@ -202,7 +202,7 @@ const App: React.FC = () => {
              <div className="absolute -inset-3 md:-inset-6 border-2 md:border-4 border-blood-red rotate-3 z-0 transition-transform group-hover:rotate-0" />
              <div className="relative bg-zinc-900 overflow-hidden shadow-[15px_15px_0px_#E31B23] md:shadow-[25px_25px_0px_#E31B23] transform -rotate-1">
                 <img 
-                  src="/images/iron-pit.jpg" 
+                  src="/images/processed-5D190BD5-876D-4AD1-B9CC-A841E2578478.jpeg" 
                   alt="V.A.D. in the trenches" 
                   className="w-full grayscale brightness-75 contrast-125 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
                 />
