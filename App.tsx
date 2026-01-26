@@ -23,7 +23,7 @@ const VAD_PRODUCT: Product = {
   price: 49.99,
   description: 'Unleash absolute anarchy in your bloodstream. This isnt just a preworkout; its a vascular transformation. Formulated with clinical doses of L-Citrulline, Betaine Nitrate, and Glycerol to force-feed your muscles and create skin-splitting pumps that defy logic.',
   flavors: ['Consensual Grape', 'Juicy Jiggle Juice'],
-  image: 'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/608700837_868241375797604_2790770691374060399_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=lQ9Cqs0_HjAQ7kNvwEbg4hO&_nc_oc=Adk0zmiNFyO8sx5vOO3j9_rVw062D8MNZO_S7Wv3P2VKvz5z-TCFyx1jtZp0ghkX5WAR7Tg_0E6UChUzkrS1lZRZ&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&_nc_gid=KOuwNGCIIxb5MzXcqhCVQw&oh=00_Afqp2dKV98LBd0-aS3U1gD6w7Ch39N96JGt_Qxk-X1pHOw&oe=697CD236'
+  image: 'https://lh3.googleusercontent.com/gg-dl/AOI_d_8BQXrYoYHKNqsFv_h3qwy8L39uiv5-b2qEBSObOUg-1e4f5eWQQR6vqLPB9-djP1m3z4vSirMEVlnGwBtrcWIp9x-tlkNo-N3h5caTQCMyU-wmIHxD9jKbtgT6Z_zQqxuUdfud3QoMh-z8EW5EKpIE_fcA6HyiLUVYptpponIip-ezBQ=s1024-rj'
 };
 
 const SupplementFacts: React.FC = () => (
