@@ -23,7 +23,7 @@ const VAD_PRODUCT: Product = {
   price: 49.99,
   description: 'Unleash absolute anarchy in your bloodstream. This isnt just a preworkout; its a vascular transformation. Formulated with clinical doses of L-Citrulline, Betaine Nitrate, and Glycerol to force-feed your muscles and create skin-splitting pumps that defy logic.',
   flavors: ['Consensual Grape', 'Juicy Jiggle Juice'],
-  image: '/images/Product.png'
+  image: 'url(https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/608700837_868241375797604_2790770691374060399_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=lQ9Cqs0_HjAQ7kNvwEbg4hO&_nc_oc=Adk0zmiNFyO8sx5vOO3j9_rVw062D8MNZO_S7Wv3P2VKvz5z-TCFyx1jtZp0ghkX5WAR7Tg_0E6UChUzkrS1lZRZ&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&_nc_gid=KOuwNGCIIxb5MzXcqhCVQw&oh=00_Afqp2dKV98LBd0-aS3U1gD6w7Ch39N96JGt_Qxk-X1pHOw&oe=697CD236)'
 };
 
 const SupplementFacts: React.FC = () => (
@@ -147,7 +147,7 @@ const App: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
           <img 
-            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1920" 
+            src="https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/608700837_868241375797604_2790770691374060399_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=lQ9Cqs0_HjAQ7kNvwEbg4hO&_nc_oc=Adk0zmiNFyO8sx5vOO3j9_rVw062D8MNZO_S7Wv3P2VKvz5z-TCFyx1jtZp0ghkX5WAR7Tg_0E6UChUzkrS1lZRZ&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&_nc_gid=KOuwNGCIIxb5MzXcqhCVQw&oh=00_Afqp2dKV98LBd0-aS3U1gD6w7Ch39N96JGt_Qxk-X1pHOw&oe=697CD236" 
             alt="Intense Gym" 
             className="w-full h-full object-cover grayscale brightness-[0.1] contrast-150 scale-105"
           />
@@ -216,7 +216,7 @@ const App: React.FC = () => {
                VASCULARITY <br /> <span className="text-blood-red">DEMANDED.</span>
             </h2>
             <p className="text-slate-300 text-lg md:text-2xl font-black italic tracking-tight leading-relaxed border-l-4 md:border-l-8 border-blood-red pl-4 md:pl-10">
-              WE DON'T DO "CASUAL GYM SESSIONS", BUT IF YOU WANT TO BE BIG, STRONG, AND VEINY, you're in the right place.
+              WE DON'T DO "CASUAL GYM SESSIONS", BUT IF YOU WANT TO BE BIG, STRONG, AND VEINY, YOU'RE IN THE RIGHT PLACE.
             </p>
             <div className="grid grid-cols-2 gap-4 md:gap-8">
                <div className="p-6 md:p-10 bg-zinc-950/50 border border-white/10 flex flex-col items-center text-center group hover:border-blood-red transition-all">
