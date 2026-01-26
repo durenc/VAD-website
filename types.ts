@@ -1,5 +1,5 @@
 
-export type Flavor = 'Consensual Grape' | 'Juicy Jiggle Juice';
+export type Flavor = 'Veiny Surge Strawberry' | 'Ultimate Pump Punch';
 
 export interface Product {
   id: string;
