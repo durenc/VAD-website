@@ -107,6 +107,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-blood-red selection:text-white font-['Inter'] overflow-x-hidden">
+      <div className="fixed inset-0 z-[-1]" style={{ backgroundImage: `url('https://media.istockphoto.com/id/1468889693/photo/vascular-system-veins.jpg?s=612x612&w=0&k=20&c=GyH4LznLxdJDeh6nsiITiKKtKqrd_U3FnXpVe65XBDE=')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', filter: 'brightness(0.3)' }}></div>
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-[70] transition-all duration-300 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-blood-red/40 py-2' : 'bg-transparent py-4 md:py-6'}`}>
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
