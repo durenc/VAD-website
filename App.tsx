@@ -23,7 +23,7 @@ const VAD_PRODUCT: Product = {
   price: 49.99,
   description: 'Unleash absolute anarchy in your bloodstream. This isnt just a preworkout; its a vascular transformation. Formulated with clinical doses of L-Citrulline, Betaine Nitrate, and Glycerol to force-feed your muscles and create skin-splitting pumps that defy logic.',
   flavors: ['Consensual Grape', 'Juicy Jiggle Juice'],
-  image: import.meta.env.BASE_URL + 'images/Product.png'
+  image: '/images/Product.png'
 };
 
 const SupplementFacts: React.FC = () => (
@@ -203,7 +203,7 @@ const App: React.FC = () => {
              <div className="absolute -inset-3 md:-inset-6 border-2 md:border-4 border-blood-red rotate-3 z-0 transition-transform group-hover:rotate-0" />
              <div className="relative bg-zinc-900 overflow-hidden shadow-[15px_15px_0px_#E31B23] md:shadow-[25px_25px_0px_#E31B23] transform -rotate-1">
                 <img 
-                  src="images/iron-pit.jpg" 
+                  src="/images/iron-pit.jpg" 
                   alt="V.A.D. in the trenches" 
                   className="w-full grayscale brightness-75 contrast-125 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
                 />
