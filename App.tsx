@@ -16,7 +16,7 @@ import {
   CreditCard,
   ExternalLink
 } from 'lucide-react';
-import { Flavor, Product } from './types';
+import { Flavor, Product } from './types.ts';
 
 const VAD_PRODUCT: Product = {
   id: 'vad-stim-free-original',
@@ -25,7 +25,7 @@ const VAD_PRODUCT: Product = {
   price: 49.99,
   description: 'Unleash absolute anarchy in your bloodstream. This isnt just a preworkout; its a vascular transformation. Formulated with clinical doses of L-Citrulline, Betaine Nitrate, and Glycerol to force-feed your muscles and create skin-splitting pumps that defy logic.',
   flavors: ['Consensual Grape', 'Juicy Jiggle Juice'],
-  image: "/images/Product.png"
+  image: "images/Product.png"
 };
 
 const SupplementFacts: React.FC = () => (
