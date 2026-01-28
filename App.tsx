@@ -355,8 +355,8 @@ const App: React.FC = () => {
                   <img src="https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/608700837_868241375797604_2790770691374060399_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=lQ9Cqs0_HjAQ7kNvwEbg4hO&_nc_oc=Adk0zmiNFyO8sx5vOO3j9_rVw062D8MNZO_S7Wv3P2VKvz5z-TCFyx1jtZp0ghkX5WAR7Tg_0E6UChUzkrS1lZRZ&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&_nc_gid=KOuwNGCIIxb5MzXcqhCVQw&oh=00_Afqp2dKV98LBd0-aS3U1gD6w7Ch39N96JGt_Qxk-X1pHOw&oe=697CD236" alt="V.A.D Logo" className="w-full h-full object-contain rounded" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-black text-2xl md:text-5xl tracking-tighter uppercase italic text-white leading-none">VEINY AH DIH</span>
-                  <span className="text-[8px] md:text-xs font-black text-blood-red tracking-[0.3em] md:tracking-[0.7em] uppercase italic">BUILT FOR THE 1%</span>
+                  <span className="font-black text-2xl md:text-5xl tracking-tighter uppercase italic text-white leading-none">V.A.D SUPPS</span>
+                  <span className="text-[8px] md:text-xs font-black text-blood-red tracking-[0.3em] md:tracking-[0.7em] uppercase italic">BUILT FOR FREAKS</span>
                 </div>
               </div>
               <h4 className="font-creepster text-3xl md:text-6xl text-white uppercase italic tracking-tighter max-w-lg leading-none">
@@ -388,7 +388,7 @@ const App: React.FC = () => {
           
           <div className="mt-24 md:mt-48 pt-10 md:pt-16 border-t border-white/5 text-center">
             <p className="text-[9px] md:text-[12px] font-black uppercase tracking-[0.3em] md:tracking-[0.6em] text-zinc-900 italic">
-               © 2024 V.A.D. SUPPLEMENTS • VASCULARITY BY FORCE • MADE FOR FREAKS.
+               © 2026 V.A.D. SUPPLEMENTS LLC• GET BIG • GET STRONG• GET VEINY
             </p>
           </div>
         </div>
