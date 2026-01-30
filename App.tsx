@@ -80,7 +80,11 @@ const SupplementFacts: React.FC = () => (
 );
 
 const KlaviyoWaitlist: React.FC = () => {
-  return <div id="klaviyo-waitlist" className="w-full" />;
+  return (
+    <div id="klaviyo-waitlist" className="w-full">
+      <div className="klaviyo-form-YtACB9"></div>
+    </div>
+  );
 };
 
 const App: React.FC = () => {
