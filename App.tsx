@@ -84,27 +84,64 @@ const KlaviyoWaitlist: React.FC = () => {
     const container = document.getElementById('klaviyo-waitlist');
     if (!container) return;
 
-    // Add external script if not already present in this container
-    if (!container.querySelector('script[src="https://static.klaviyo.com/onsite/js/SCiyW3/klaviyo.js?company_id=SCiyW3"]')) {
-      const s = document.createElement('script');
-      s.async = true;
-      s.type = 'text/javascript';
-      s.src = 'https://static.klaviyo.com/onsite/js/SCiyW3/klaviyo.js?company_id=SCiyW3';
-      container.appendChild(s);
-    }
+    // Clean up any previous scripts rendered here
+    const removeExisting = () => {
+      const oldExt = container.querySelector('script[src="https://static.klaviyo.com/onsite/js/SCiyW3/klaviyo.js?company_id=SCiyW3"]');
+      if (oldExt) oldExt.remove();
+      const oldInit = container.querySelector('script[data-kl-init]');
+      if (oldInit) oldInit.remove();
+    };
+    removeExisting();
 
-    // Add the exact inline initialization script the widget expects
-    if (!container.querySelector('script[data-kl-init]')) {
-      const init = document.createElement('script');
-      init.setAttribute('data-kl-init', 'true');
-      init.type = 'text/javascript';
-      init.text = `!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();`;
-      container.appendChild(init);
-    }
+    // External Klaviyo script
+    const scriptExt = document.createElement('script');
+    scriptExt.async = true;
+    scriptExt.type = 'text/javascript';
+    scriptExt.src = 'https://static.klaviyo.com/onsite/js/SCiyW3/klaviyo.js?company_id=SCiyW3';
+    scriptExt.onload = () => {
+      console.log('[Klaviyo] external script loaded');
+      // small check after load
+      setTimeout(() => {
+        console.log('[Klaviyo] after load - klaviyo:', (window as any).klaviyo, '_klOnsite:', (window as any)._klOnsite);
+      }, 200);
+    };
+    scriptExt.onerror = (e) => { console.error('[Klaviyo] external script failed to load', e); };
+    container.appendChild(scriptExt);
+
+    // Inline init script (exact snippet you provided)
+    const init = document.createElement('script');
+    init.setAttribute('data-kl-init', 'true');
+    init.type = 'text/javascript';
+    init.text = `!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();`;
+    container.appendChild(init);
+    console.log('[Klaviyo] init script appended');
+
+    // Poll for readiness and push a test entry to the queue (safe: _klOnsite should be an array)
+    let checks = 0;
+    const interval = setInterval(() => {
+      checks++;
+      const hasProxy = !!(window as any).klaviyo;
+      const hasQueue = Array.isArray((window as any)._klOnsite);
+      console.log(`[Klaviyo] check ${checks}: klaviyo=${hasProxy}, _klOnsite=${hasQueue}`);
+      if (hasQueue) {
+        try {
+          (window as any)._klOnsite.push(['_test_from_site', Date.now()]);
+          console.log('[Klaviyo] pushed test event to _klOnsite');
+        } catch (e) {
+          console.error('[Klaviyo] error pushing test event', e);
+        }
+        clearInterval(interval);
+      }
+      if (checks >= 10) {
+        clearInterval(interval);
+        console.warn('[Klaviyo] readiness checks timed out');
+      }
+    }, 500);
 
     return () => {
-      try { const s = container.querySelector('script[src="https://static.klaviyo.com/onsite/js/SCiyW3/klaviyo.js?company_id=SCiyW3"]'); if (s) s.remove(); } catch (e) {}
-      try { const init = container.querySelector('script[data-kl-init]'); if (init) init.remove(); } catch (e) {}
+      try { scriptExt.remove(); } catch (e) {}
+      try { init.remove(); } catch (e) {}
+      try { clearInterval(interval); } catch (e) {}
     };
   }, []);
 
@@ -322,13 +359,7 @@ const App: React.FC = () => {
 
                 <div className="pt-4 md:pt-8 space-y-6 md:space-y-10">
                   <div className="relative group">
-                    <div dangerouslySetInnerHTML={{__html: `
-                      <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/SCiyW3/klaviyo.js?company_id=SCiyW3'></script>
-                      <script type="text/javascript"> 
-                      //Initialize Klaviyo object on page load
-                      !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}(); 
-                      </script>
-                    `}} />
+                    <KlaviyoWaitlist />
                   </div>
 
                   <div className="flex flex-col items-center gap-4 py-6 md:py-10 border-y border-white/5">
