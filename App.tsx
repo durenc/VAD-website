@@ -81,26 +81,36 @@ const SupplementFacts: React.FC = () => (
 
 const KlaviyoWaitlist: React.FC = () => {
   useEffect(() => {
-    const s = document.createElement('script');
-    s.async = true;
-    s.type = 'text/javascript';
-    s.src = 'https://static.klaviyo.com/onsite/js/SCiyW3/klaviyo.js?company_id=SCiyW3';
-    document.body.appendChild(s);
+    const container = document.getElementById('klaviyo-waitlist');
+    if (!container) return;
 
-    const init = document.createElement('script');
-    init.type = 'text/javascript';
-    init.innerHTML = `!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();`;
-    document.body.appendChild(init);
+    // Add external script if not already present in this container
+    if (!container.querySelector('script[src="https://static.klaviyo.com/onsite/js/SCiyW3/klaviyo.js?company_id=SCiyW3"]')) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'https://static.klaviyo.com/onsite/js/SCiyW3/klaviyo.js?company_id=SCiyW3';
+      container.appendChild(s);
+    }
+
+    // Add the exact inline initialization script the widget expects
+    if (!container.querySelector('script[data-kl-init]')) {
+      const init = document.createElement('script');
+      init.setAttribute('data-kl-init', 'true');
+      init.type = 'text/javascript';
+      init.text = `!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();`;
+      container.appendChild(init);
+    }
 
     return () => {
-      try { document.body.removeChild(s); } catch (e) {}
-      try { document.body.removeChild(init); } catch (e) {}
+      try { const s = container.querySelector('script[src="https://static.klaviyo.com/onsite/js/SCiyW3/klaviyo.js?company_id=SCiyW3"]'); if (s) s.remove(); } catch (e) {}
+      try { const init = container.querySelector('script[data-kl-init]'); if (init) init.remove(); } catch (e) {}
     };
   }, []);
 
   return (
     <div id="klaviyo-waitlist" className="w-full">
-      {/* Klaviyo waitlist widget will render here */}
+      {/* Klaviyo will mount the waitlist here */}
     </div>
   );
 };
