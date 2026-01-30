@@ -79,6 +79,32 @@ const SupplementFacts: React.FC = () => (
   </div>
 );
 
+const KlaviyoWaitlist: React.FC = () => {
+  useEffect(() => {
+    const s = document.createElement('script');
+    s.async = true;
+    s.type = 'text/javascript';
+    s.src = 'https://static.klaviyo.com/onsite/js/SCiyW3/klaviyo.js?company_id=SCiyW3';
+    document.body.appendChild(s);
+
+    const init = document.createElement('script');
+    init.type = 'text/javascript';
+    init.innerHTML = `!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();`;
+    document.body.appendChild(init);
+
+    return () => {
+      try { document.body.removeChild(s); } catch (e) {}
+      try { document.body.removeChild(init); } catch (e) {}
+    };
+  }, []);
+
+  return (
+    <div id="klaviyo-waitlist" className="w-full">
+      {/* Klaviyo waitlist widget will render here */}
+    </div>
+  );
+};
+
 const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedFlavor, setSelectedFlavor] = useState<Flavor>(VAD_PRODUCT.flavors[0]);
@@ -268,6 +294,7 @@ const App: React.FC = () => {
               </p>
 
               <div className="space-y-8 md:space-y-12">
+                {/*
                 <div>
                    <h4 className="text-[10px] md:text-[12px] font-black uppercase tracking-[0.3em] md:tracking-[0.6em] text-white/40 mb-4 md:mb-6 flex items-center gap-2 md:gap-4">
                      CHOOSE YOUR POISON <div className="h-[1px] flex-grow bg-white/10"></div>
@@ -281,13 +308,11 @@ const App: React.FC = () => {
                       ))}
                    </div>
                 </div>
+                */} 
 
                 <div className="pt-4 md:pt-8 space-y-6 md:space-y-10">
                   <div className="relative group">
-                    <button className="w-full bg-white text-black py-5 md:py-8 px-8 md:px-12 text-2xl md:text-4xl font-black uppercase italic tracking-[0.1em] md:tracking-[0.2em] flex items-center justify-center gap-4 md:gap-10 hover:bg-blood-red hover:text-white transition-all transform active:scale-[0.97] shadow-[12px_12px_0px_#E31B23] md:shadow-[25px_25px_0px_#E31B23]">
-                      <CreditCard strokeWidth={3} className="w-7 h-7 md:w-10 md:h-10" />
-                      BUY NOW
-                    </button>
+                    <KlaviyoWaitlist />
                   </div>
 
                   <div className="flex flex-col items-center gap-4 py-6 md:py-10 border-y border-white/5">
