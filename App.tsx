@@ -36,7 +36,7 @@ const FAQ_ITEMS = [
     a: `Yes. V.A.D is designed to stack cleanly with stimulant-based pre-workouts. If you train early or rely on stimulants, take 1 scoop of V.A.D alongside 1 scoop of your stim pre-workout. Always check both labels to ensure any overlapping ingredients stay within safe daily limits.`
   },
   {
-    q: 'Should I take one scoop or two?',
+    q: 'Should I take one scoop or two?', 
     a: `V.A.D is formulated for flexible dosing. Start with 1 scoop to assess tolerance—this will deliver a strong pump. For maximum fullness and vascularity, 2 scoops can be used. Adjust based on your body weight, training intensity, and pump preference.`
   },
   {
@@ -144,18 +144,19 @@ const App: React.FC = () => {
               <img src="https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/608700837_868241375797604_2790770691374060399_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=lQ9Cqs0_HjAQ7kNvwEbg4hO&_nc_oc=Adk0zmiNFyO8sx5vOO3j9_rVw062D8MNZO_S7Wv3P2VKvz5z-TCFyx1jtZp0ghkX5WAR7Tg_0E6UChUzkrS1lZRZ&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&_nc_gid=KOuwNGCIIxb5MzXcqhCVQw&oh=00_Afqp2dKV98LBd0-aS3U1gD6w7Ch39N96JGt_Qxk-X1pHOw&oe=697CD236" alt="V.A.D Logo" className="w-10 h-10 md:w-12 md:h-12 transition-all duration-300 shadow-[3px_3px_0px_#fff] md:shadow-[4px_4px_0px_#fff]" />
             </div>
             <div className="flex flex-col -space-y-1">
-              <span className="font-black text-lg md:text-2xl tracking-tighter uppercase italic text-white leading-none">Veiny Ah Dih Supplements</span>
+              <span className="font-black text-lg md:text-2xl tracking-tighter uppercase italic text-white leading-none">V.A.D. Supplements</span>
               <span className="text-[7px] md:text-[9px] font-black text-white/40 tracking-[0.2em] md:tracking-[0.4em] uppercase">Get Big, Get Strong, Get VEINY</span>
             </div>
           </div>
 
           <div className="hidden lg:flex items-center space-x-8 md:space-x-10">
-            {['Home', 'The Formula', 'Facts', 'FAQs', 'Connect'].map((link) => (
+            {['Home', 'The Formula', 'Facts', 'Our Story', 'FAQs', 'Connect'].map((link) => (
               <button 
                 key={link} 
                 onClick={() => {
                   if (link === 'Facts') return scrollToSection('dosage-facts');
                   if (link === 'The Formula') return scrollToSection('the-formula');
+                  if (link === 'Our Story') return scrollToSection('our-story');
                   if (link === 'FAQs') return scrollToSection('faqs');
                   return scrollToSection(link.toLowerCase().replace(' ', '-'))
                 }}
@@ -376,7 +377,20 @@ const App: React.FC = () => {
           </div>
         </div>
       </section>
-
+      {/* Our Story */}
+      <section id="our-story" className="py-24 md:py-48 bg-black/70 relative border-t border-white/10">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto prose prose-invert text-white">
+            <h2 className="text-4xl md:text-6xl font-creepster text-white uppercase italic tracking-tighter mb-4">Our Story</h2>
+            <p className="mb-4">I’ve always loved the gym. The lifts. The grind. The pursuit of getting better every single day.</p>
+            <p className="mb-4">But more than anything, I love the pump. There’s nothing like finishing a session, catching your reflection, and seeing veins popping and muscles full.</p>
+            <p className="mb-4">I tried countless pre-workouts, but stimulants came with tradeoffs—restricted training times, tolerance buildup, and the need to cycle off just to feel them work again. I wanted something different. A product I could take anytime. Something that supported getting bigger, stronger, and undeniably veiny—without compromise.</p>
+            <p className="mb-4">That’s why I founded V.A.D. Supplements.</p>
+            <p className="mb-4">Whether you run one scoop or two, take it solo or stack it with stimulants, V.A.D. is precision-dosed to deliver extreme pumps, vascularity, and performance—on your terms.</p>
+            <p className="mb-0">Train anytime. Get stupid pumps. Stay veiny.</p>
+          </div>
+        </div>
+      </section>
       {/* FAQ Section */}
       <section id="faqs" className="py-24 md:py-48 bg-black/40 relative border-t border-white/10">
         <div className="container mx-auto px-4 md:px-6">
