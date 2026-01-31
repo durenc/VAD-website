@@ -22,7 +22,7 @@ const VAD_PRODUCT: Product = {
   price: 49.99,
   description: 'Unleash absolute anarchy in your bloodstream. This isnt just a preworkout; its a vascular transformation. Formulated with clinical doses of L-Citrulline, Betaine Nitrate, and Glycerol to force-feed your muscles and create skin-splitting pumps that defy logic.',
   flavors: ['Veiny Surge Strawberry', 'Ultimate Pump Punch'],
-  image: 'https://scontent-ord5-3.xx.fbcdn.net/v/t39.30808-6/622595441_122108468787206325_7786670264069078647_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=h7TLrCy2Q3QQ7kNvwFW_x5I&_nc_oc=AdlpyHfG_PpdxvWa0bLHDnhWxll5v20vNJZvhP8Use9P5cc1kzpic3Knk1Z4V3HT3H-LPXdG39PFB3w6nE-7sPYJ&_nc_zt=23&_nc_ht=scontent-ord5-3.xx&_nc_gid=zhTjC7gDczFhF6ulaJL1gg&oh=00_AfuQ7ZbQsd3CfHCZOuzFpjj6rR3td-oP2aCclUfsMumrtQ&oe=69838F9F'
+  image: 'https://scontent-ord5-3.xx.fbcdn.net/v/t39.30808-6/625076738_122108469411206325_747493529237694407_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=OPir3ET2aAkQ7kNvwH5vMJM&_nc_oc=Adm1j2LS5y-ut9VwHcDGj2EhxZ75cF7X6jnpJOrycz5vqBq-ivyiCe7aeI5z6sRr69hwonwvyqAm0bn4yriYj9cC&_nc_zt=23&_nc_ht=scontent-ord5-3.xx&_nc_gid=WrWEfagDdEoRkYSn_cnbkg&oh=00_Afv_2dYaYZUgua27Pqd13WyQEu_2OHbBc9oDYax3WmvJMw&oe=69836DB1'
 };
 
 const FAQ_ITEMS = [
@@ -284,7 +284,7 @@ const App: React.FC = () => {
 
               <div className="flex flex-col sm:flex-row items-start sm:items-end gap-6 md:gap-10">
                  <div className="flex flex-col">
-                   <span className="text-[8px] md:text-[10px] font-black uppercase text-white/40 tracking-[0.4em] md:tracking-[0.6em] mb-1 md:mb-2">FIXED TRENCH PRICING</span>
+                   <span className="text-[8px] md:text-[10px] font-black uppercase text-white/40 tracking-[0.4em] md:tracking-[0.6em] mb-1 md:mb-2">YOU CAN'T PUT A PRICE ON A PUMP LIKE THIS, BUT WE TRIED</span>
                    <span className="text-6xl sm:text-8xl md:text-9xl font-black italic tracking-tighter text-white leading-none">${VAD_PRODUCT.price}</span>
                  </div>
                  <div className="sm:mb-4">
