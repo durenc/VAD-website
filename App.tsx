@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { 
-  ShoppingBag, 
   Instagram, 
   Facebook,
   Skull,
@@ -165,10 +164,6 @@ const App: React.FC = () => {
                 {link}
               </button>
             ))}
-            <button className="relative group p-2">
-              <ShoppingBag strokeWidth={2.5} className="text-white group-hover:text-blood-red transition-colors w-5 h-5 md:w-[22px] md:h-[22px]" />
-              <span className="absolute -top-1 -right-1 bg-blood-red text-[8px] font-black w-4 h-4 md:w-5 md:h-5 flex items-center justify-center border-2 border-black rotate-12 text-white">0</span>
-            </button>
           </div> 
           <button className="lg:hidden p-2 text-white bg-white/5 border border-white/10" onClick={() => scrollToSection('connect')} aria-label="Menu">
             <Skull size={20} />
@@ -323,11 +318,11 @@ const App: React.FC = () => {
                     <KlaviyoWaitlist />
                   </div>
 
-                  <div className="flex flex-col items-center gap-4 py-6 md:py-10 border-y border-white/5">
+                  {/* <div className="flex flex-col items-center gap-4 py-6 md:py-10 border-y border-white/5">
                     <div className="flex items-center gap-3 text-white/30 font-black italic uppercase tracking-[0.2em] md:tracking-[0.4em] text-[10px] md:text-sm">
                       POWERED BY <span className="text-white tracking-widest flex items-center gap-1 md:gap-2"><div className="w-4 h-4 md:w-6 md:h-6 border md:border-2 border-white/30 flex items-center justify-center font-black text-[7px] md:text-[10px]">S</div> SQUARE</span>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -408,7 +403,7 @@ const App: React.FC = () => {
                   aria-expanded={openFaq === idx}
                   aria-controls={`faq-content-${idx}`}
                 >
-                  <span className="text-xl md:text-2xl font-black">{item.q}</span>
+                  <span className="text-xl md:text-2xl font-black text-white">{item.q}</span>
                   <span className="text-blood-red font-black text-2xl ml-4">{openFaq === idx ? '−' : '+'}</span>
                 </button>
 
@@ -416,7 +411,7 @@ const App: React.FC = () => {
                   id={`faq-content-${idx}`}
                   role="region"
                   aria-labelledby={`faq-header-${idx}`}
-                  className={`text-slate-400 overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-[1000px] py-4' : 'max-h-0'}`}
+                  className={`text-white overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-[1000px] py-4' : 'max-h-0'}`}
                 >
                   <p className="leading-relaxed font-['Inter']">{item.a}</p>
                 </div>
