@@ -26,6 +26,25 @@ const VAD_PRODUCT: Product = {
   image: 'https://lh3.googleusercontent.com/gg-dl/AOI_d_8BQXrYoYHKNqsFv_h3qwy8L39uiv5-b2qEBSObOUg-1e4f5eWQQR6vqLPB9-djP1m3z4vSirMEVlnGwBtrcWIp9x-tlkNo-N3h5caTQCMyU-wmIHxD9jKbtgT6Z_zQqxuUdfud3QoMh-z8EW5EKpIE_fcA6HyiLUVYptpponIip-ezBQ=s1024-rj'
 };
 
+const FAQ_ITEMS = [
+  {
+    q: 'Why is there no caffeine?',
+    a: `V.A.D is built around three priorities: getting big, getting strong, and getting veiny. While caffeine has its place, it also limits when and how a product can be used. Many people train at night, train after coffee, or want pure pump support without stimulants. By keeping V.A.D caffeine-free, we maximize flexibility. If you want stimulants, you can stack caffeine separately—without compromising the pump.`
+  },
+  {
+    q: 'Can I take V.A.D with other pre-workouts?',
+    a: `Yes. V.A.D is designed to stack cleanly with stimulant-based pre-workouts. If you train early or rely on stimulants, take 1 scoop of V.A.D alongside 1 scoop of your stim pre-workout. Always check both labels to ensure any overlapping ingredients stay within safe daily limits.`
+  },
+  {
+    q: 'Should I take one scoop or two?',
+    a: `V.A.D is formulated for flexible dosing. Start with 1 scoop to assess tolerance—this will deliver a strong pump. For maximum fullness and vascularity, 2 scoops can be used. Adjust based on your body weight, training intensity, and pump preference.`
+  },
+  {
+    q: 'Why the name “Veiny Ah Dih”?',
+    a: `The supplement industry takes itself too seriously. We don’t. Training should be intense, effective, and fun. The name Veiny Ah Dih reflects our no-filter, over-the-top approach to pump training and gym culture. It’s bold, it’s ridiculous, and it delivers exactly what it promises.`
+  }
+];
+
 const SupplementFacts: React.FC = () => (
   <div className="bg-white text-black p-4 md:p-8 font-sans border-2 md:border-4 border-black w-full max-w-2xl mx-auto shadow-[6px_6px_0px_#E31B23] md:shadow-[10px_10px_0px_#E31B23]">
     <h3 className="text-2xl md:text-4xl font-black border-b-4 md:border-b-8 border-black pb-1 mb-1 leading-none uppercase">Supplement Facts</h3>
@@ -90,6 +109,7 @@ const KlaviyoWaitlist: React.FC = () => {
 const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedFlavor, setSelectedFlavor] = useState<Flavor>(VAD_PRODUCT.flavors[0]);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -130,10 +150,15 @@ const App: React.FC = () => {
           </div>
 
           <div className="hidden lg:flex items-center space-x-8 md:space-x-10">
-            {['Home', 'The Formula', 'Facts', 'Connect'].map((link) => (
+            {['Home', 'The Formula', 'Facts', 'FAQs', 'Connect'].map((link) => (
               <button 
                 key={link} 
-                onClick={() => scrollToSection(link === 'Facts' ? 'dosage-facts' : link === 'The Formula' ? 'the-formula' : link.toLowerCase().replace(' ', '-'))}
+                onClick={() => {
+                  if (link === 'Facts') return scrollToSection('dosage-facts');
+                  if (link === 'The Formula') return scrollToSection('the-formula');
+                  if (link === 'FAQs') return scrollToSection('faqs');
+                  return scrollToSection(link.toLowerCase().replace(' ', '-'))
+                }}
                 className="text-[10px] md:text-[11px] font-black tracking-[0.2em] md:tracking-[0.25em] uppercase hover:text-blood-red transition-all italic text-white"
               >
                 {link}
@@ -143,7 +168,7 @@ const App: React.FC = () => {
               <ShoppingBag strokeWidth={2.5} className="text-white group-hover:text-blood-red transition-colors w-5 h-5 md:w-[22px] md:h-[22px]" />
               <span className="absolute -top-1 -right-1 bg-blood-red text-[8px] font-black w-4 h-4 md:w-5 md:h-5 flex items-center justify-center border-2 border-black rotate-12 text-white">0</span>
             </button>
-          </div>
+          </div> 
           <button className="lg:hidden p-2 text-white bg-white/5 border border-white/10" onClick={() => scrollToSection('connect')} aria-label="Menu">
             <Skull size={20} />
           </button>
@@ -348,6 +373,41 @@ const App: React.FC = () => {
             <div className="w-full max-w-2xl mb-16 md:mb-32">
               <SupplementFacts />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faqs" className="py-24 md:py-48 bg-black/40 relative border-t border-white/10">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col items-center mb-12 text-center">
+            <h2 className="text-4xl md:text-6xl font-creepster text-white uppercase italic tracking-tighter">FAQs</h2>
+            <p className="text-slate-500 font-black uppercase tracking-[0.4em] md:tracking-[1em] text-[10px] md:text-sm italic">Common questions and answers</p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4 text-left text-white">
+            {FAQ_ITEMS.map((item, idx) => (
+              <div key={idx} className="border-b border-white/10">
+                <button
+                  className="w-full text-left flex justify-between items-center py-4"
+                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                  aria-expanded={openFaq === idx}
+                  aria-controls={`faq-content-${idx}`}
+                >
+                  <span className="text-xl md:text-2xl font-black">{item.q}</span>
+                  <span className="text-blood-red font-black text-2xl ml-4">{openFaq === idx ? '−' : '+'}</span>
+                </button>
+
+                <div
+                  id={`faq-content-${idx}`}
+                  role="region"
+                  aria-labelledby={`faq-header-${idx}`}
+                  className={`text-slate-400 overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-[1000px] py-4' : 'max-h-0'}`}
+                >
+                  <p className="leading-relaxed">{item.a}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
