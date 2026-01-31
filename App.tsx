@@ -22,7 +22,7 @@ const VAD_PRODUCT: Product = {
   price: 49.99,
   description: 'Unleash absolute anarchy in your bloodstream. This isnt just a preworkout; its a vascular transformation. Formulated with clinical doses of L-Citrulline, Betaine Nitrate, and Glycerol to force-feed your muscles and create skin-splitting pumps that defy logic.',
   flavors: ['Veiny Surge Strawberry', 'Ultimate Pump Punch'],
-  image: 'https://lh3.googleusercontent.com/gg-dl/AOI_d_8BQXrYoYHKNqsFv_h3qwy8L39uiv5-b2qEBSObOUg-1e4f5eWQQR6vqLPB9-djP1m3z4vSirMEVlnGwBtrcWIp9x-tlkNo-N3h5caTQCMyU-wmIHxD9jKbtgT6Z_zQqxuUdfud3QoMh-z8EW5EKpIE_fcA6HyiLUVYptpponIip-ezBQ=s1024-rj'
+  image: 'https://scontent-ord5-3.xx.fbcdn.net/v/t39.30808-6/622595441_122108468787206325_7786670264069078647_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=h7TLrCy2Q3QQ7kNvwFW_x5I&_nc_oc=AdlpyHfG_PpdxvWa0bLHDnhWxll5v20vNJZvhP8Use9P5cc1kzpic3Knk1Z4V3HT3H-LPXdG39PFB3w6nE-7sPYJ&_nc_zt=23&_nc_ht=scontent-ord5-3.xx&_nc_gid=zhTjC7gDczFhF6ulaJL1gg&oh=00_AfuQ7ZbQsd3CfHCZOuzFpjj6rR3td-oP2aCclUfsMumrtQ&oe=69838F9F'
 };
 
 const FAQ_ITEMS = [
