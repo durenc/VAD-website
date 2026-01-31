@@ -380,7 +380,7 @@ const App: React.FC = () => {
       {/* Our Story */}
       <section id="our-story" className="py-24 md:py-48 bg-black/70 relative border-t border-white/10">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto prose prose-invert text-white">
+          <div className="max-w-3xl mx-auto prose prose-invert text-white font-['Inter']">
             <h2 className="text-4xl md:text-6xl font-creepster text-white uppercase italic tracking-tighter mb-4">Our Story</h2>
             <p className="mb-4">I’ve always loved the gym. The lifts. The grind. The pursuit of getting better every single day.</p>
             <p className="mb-4">But more than anything, I love the pump. There’s nothing like finishing a session, catching your reflection, and seeing veins popping and muscles full.</p>
@@ -418,7 +418,7 @@ const App: React.FC = () => {
                   aria-labelledby={`faq-header-${idx}`}
                   className={`text-slate-400 overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-[1000px] py-4' : 'max-h-0'}`}
                 >
-                  <p className="leading-relaxed">{item.a}</p>
+                  <p className="leading-relaxed font-['Inter']">{item.a}</p>
                 </div>
               </div>
             ))}
@@ -453,7 +453,7 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            <div className="lg:w-1/2 w-full">
+            {/* <div className="lg:w-1/2 w-full">
                <div className="space-y-6 md:space-y-12">
                   <h5 className="text-[12px] md:text-[14px] font-black uppercase tracking-[0.4em] md:tracking-[0.6em] text-white">NEWSLETTER</h5>
                   <div className="relative group w-full">
@@ -464,7 +464,7 @@ const App: React.FC = () => {
                     POWERED BY <span className="text-white flex items-center gap-1"><div className="w-3 h-3 md:w-4 md:h-4 border border-white/30 flex items-center justify-center font-black text-[7px] md:text-[8px]">S</div> SQUARE</span>
                   </div>
                </div>
-            </div>
+            </div> */}
           </div>
           
           <div className="mt-24 md:mt-48 pt-10 md:pt-16 border-t border-white/5 text-center">
