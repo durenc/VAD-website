@@ -302,13 +302,13 @@ const [currentMerchImage, setCurrentMerchImage] = useState(0);
 
             <div className="flex flex-col justify-center space-y-8 md:space-y-12">
               <div className="space-y-4 md:space-y-6">
-                {/* ...existing code... */}
+                {/*
+                <div className="flex items-center gap-3 md:gap-4 text-blood-red font-black text-[10px] md:text-sm uppercase tracking-[0.3em] md:tracking-[0.5em] italic">
+                   <Flame fill="currentColor" className="w-4 h-4 md:w-5 md:h-5" /> FREAK TIER ANARCHY
+                </div> */}
                 <h2 className="text-4xl md:text-8xl font-creepster text-white uppercase leading-[0.9] md:leading-none italic drop-shadow-[4px_4px_0px_#E31B23] md:drop-shadow-[8px_8px_0px_#E31B23]">
-                  Veiny Ahh Drink
+                  {VAD_PRODUCT.name}
                 </h2>
-                <div className="text-lg md:text-2xl font-bold text-white uppercase tracking-wide mt-1 md:mt-2" style={{ letterSpacing: '0.1em' }}>
-                  <span className="text-base md:text-xl font-semibold text-white opacity-80">Stimulant free pre workout formula</span>
-                </div>
               </div>
 
               <div className="flex flex-col sm:flex-row items-start sm:items-end gap-6 md:gap-10">
