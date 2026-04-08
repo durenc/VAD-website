@@ -498,6 +498,10 @@ const [currentMerchImage, setCurrentMerchImage] = useState(0);
                 <h2 className="text-4xl md:text-8xl font-creepster text-white uppercase leading-[0.9] md:leading-none italic drop-shadow-[4px_4px_0px_#E31B23] md:drop-shadow-[8px_8px_0px_#E31B23] text-left lg:text-left">
                   V.A.D. ATHLETE SHIRT
                 </h2>
+                <div className="flex flex-col">
+                  <span className="text-[8px] md:text-[10px] font-black uppercase text-white tracking-[0.4em] md:tracking-[0.6em] mb-1 md:mb-2">LOOK VEINY FOR LESS</span>
+                  <span className="text-6xl sm:text-8xl md:text-9xl font-black italic tracking-tighter text-white leading-none">$14.99</span>
+                </div>
               </div>
               <p className="text-white text-lg md:text-2xl font-medium leading-relaxed italic border-l-4 md:border-l-8 border-blood-red pl-6 md:pl-10 max-w-xl">
                 We know you’re big and veiny.  We also know that you wear clothes.  That's why you need clothes that show people just how big and veiny you are, whether you’re inside or outside the gym.  Our V.A.D. athlete performance tee signals that you’re big, you’re strong, you’re veiny, and you don’t care who knows it.
