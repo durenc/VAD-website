@@ -499,7 +499,7 @@ const [currentMerchImage, setCurrentMerchImage] = useState(0);
                   V.A.D. ATHLETE SHIRT
                 </h2>
                 <div className="flex flex-col">
-                  <span className="text-[8px] md:text-[10px] font-black uppercase text-white tracking-[0.4em] md:tracking-[0.6em] mb-1 md:mb-2">LOOK VEINY FOR LESS</span>
+                  <span className="text-[8px] md:text-[10px] font-black uppercase text-white tracking-[0.4em] md:tracking-[0.6em] mb-1 md:mb-2">THE BIGGEST, STRONGEST, AND VEINIEST SHIRT EVER DESIGNED</span>
                   <span className="text-6xl sm:text-8xl md:text-9xl font-black italic tracking-tighter text-white leading-none">$14.99</span>
                 </div>
               </div>
