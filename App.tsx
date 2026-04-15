@@ -164,7 +164,7 @@ const [currentMerchImage, setCurrentMerchImage] = useState(0);
                 onClick={() => {
                   if (link === 'Get VEINY') return scrollToSection('product');
                   if (link === 'The Veiny Ahh Formula') return scrollToSection('the-veiny-Ahh-formula');
-                  if (link === 'Veiny Ahh Merch') return scrollToSection('veiny-Ahh-merch');
+                  if (link === 'Veiny Ahh Drip') return scrollToSection('veiny-Ahh-merch');
                   if (link === 'Our Story') return scrollToSection('our-story');
                   if (link === 'FAQs') return scrollToSection('faqs');
                   return scrollToSection(link.toLowerCase().replace(' ', '-'))
@@ -188,7 +188,7 @@ const [currentMerchImage, setCurrentMerchImage] = useState(0);
                 onClick={() => {
                   if (link === 'Get VEINY') return scrollToSection('product');
                   if (link === 'The Veiny Ahh Formula') return scrollToSection('the-veiny-Ahh-formula');
-                  if (link === 'Veiny Ahh Merch') return scrollToSection('veiny-Ahh-merch');
+                  if (link === 'Veiny Ahh Drip') return scrollToSection('veiny-Ahh-merch');
                   if (link === 'Our Story') return scrollToSection('our-story');
                   if (link === 'FAQs') return scrollToSection('faqs');
                   return scrollToSection(link.toLowerCase().replace(' ', '-'))
@@ -440,7 +440,7 @@ const [currentMerchImage, setCurrentMerchImage] = useState(0);
           <div className="flex flex-col items-center mb-16 md:mb-32 text-center">
             <h2 className="relative text-5xl sm:text-7xl md:text-[11rem] font-creepster uppercase italic tracking-tighter leading-[0.9] md:leading-none text-center">
               <span className="absolute left-2 top-2 md:left-8 md:top-8 text-blood-red z-0 select-none pointer-events-none w-full">VEINY AHH MERCH</span>
-              <span className="relative text-white z-10 w-full">VEINY AHH MERCH</span>
+              <span className="relative text-white z-10 w-full">VEINY AHH DRIP</span>
             </h2>
           </div>
           {/* Merch Content: Carousel left, details right */}
