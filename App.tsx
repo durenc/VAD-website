@@ -158,7 +158,7 @@ const [currentMerchImage, setCurrentMerchImage] = useState(0);
           </div>
 
           <div className="hidden lg:flex items-center space-x-8 md:space-x-10">
-            {['Get VEINY', 'The Veiny Ahh Formula', 'Veiny Ahh Merch','Our Story', 'FAQs', 'Connect'].map((link) => (
+            {['Get VEINY', 'The Veiny Ahh Formula', 'Veiny Ahh Drip','Our Story', 'FAQs', 'Connect'].map((link) => (
               <button 
                 key={link} 
                 onClick={() => {
@@ -182,7 +182,7 @@ const [currentMerchImage, setCurrentMerchImage] = useState(0);
         {/* Mobile collapsible nav */}
         {mobileNavOpen && (
           <div className="flex flex-col items-center gap-2 py-4 bg-black/95 border-t border-blood-red/40 lg:hidden">
-            {['Get VEINY', 'The Veiny Ahh Formula', 'Veiny Ahh Merch', 'Our Story', 'FAQs', 'Connect'].map((link) => (
+            {['Get VEINY', 'The Veiny Ahh Formula', 'Veiny Ahh Drip', 'Our Story', 'FAQs', 'Connect'].map((link) => (
               <button 
                 key={link} 
                 onClick={() => {
@@ -439,7 +439,7 @@ const [currentMerchImage, setCurrentMerchImage] = useState(0);
           {/* Section Header */}
           <div className="flex flex-col items-center mb-16 md:mb-32 text-center">
             <h2 className="relative text-5xl sm:text-7xl md:text-[11rem] font-creepster uppercase italic tracking-tighter leading-[0.9] md:leading-none text-center">
-              <span className="absolute left-2 top-2 md:left-8 md:top-8 text-blood-red z-0 select-none pointer-events-none w-full">VEINY AHH MERCH</span>
+              <span className="absolute left-2 top-2 md:left-8 md:top-8 text-blood-red z-0 select-none pointer-events-none w-full">VEINY AHH DRIP</span>
               <span className="relative text-white z-10 w-full">VEINY AHH DRIP</span>
             </h2>
           </div>
